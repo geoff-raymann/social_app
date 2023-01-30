@@ -31,7 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Our apps
     'account.apps.AccountConfig',
+
+    # Default applications
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,8 +127,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Autodirect URLs
 LOGIN_REDIRECT_URL = 'account:dashboard'
 LOGIN_URL = 'account:login'
-LOGOUT_REDIRECT_URL = 'account:logout'
 LOGOUT_URL = 'account:logout'
+LOGOUT_REDIRECT_URL = 'account:dashboard'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
