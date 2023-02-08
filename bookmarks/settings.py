@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-i_9z49!+yub+^d2i=zweyph7^6f(^9#%ptd7uz70+k+y)7l*3r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -34,6 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Our apps
     'account.apps.AccountConfig',
+    'social_django',
 
     # Default applications
     'django.contrib.admin',
@@ -142,4 +144,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = '3434741986771292'
+SOCIAL_AUTH_FACEBOOK_SECRET = '9b93253f9de28e74001ef64c31ebfe3c'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_TWITTER_KEY = '4rch6uT5fZZKsiDEEZiOkTPSr' # Twitter API Key
+SOCIAL_AUTH_TWITTER_SECRET = '1Dm6IU1HT2D0hK8J69fAdZ5seEelvT2SzODFVPAHf9fuB9sdwa' # Twitter API Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '213828836736-dv8dgat0n8p0s6r1k88vfoa2qt11nm7v.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Consumer Secret

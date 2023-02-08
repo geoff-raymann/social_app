@@ -7,6 +7,9 @@ from bookmarks import settings
 from django.contrib.auth.models import User, auth
 from .models import Profile
 from django.contrib import messages
+import requests
+import json
+
 
 # Create your views here.
 
@@ -82,4 +85,46 @@ def edit(request):
     })
 
 
+# def authenticate_user(request):
+#     if request.method == 'GET':
+#         # Get the code from the URL query string
+#         code = request.GET.get('code')
+#         # Prepare the parameters for the access token request
+#         params = {
+#             'client_id': '3434741986771292',
+#             'redirect_uri': 'https://mysite.com:800/account/login',
+#             'client_secret': '9b93253f9de28e74001ef64c31ebfe3c',
+#             'code': code
+#         }
+#         # Send the access token request to Facebook
+#         response = requests.get('https://graph.facebook.com/v8.0/oauth/access_token', params=params)
+#         # Extract the access token from the response
+#         access_token = response.json().get('access_token')
+#         # Use the access token to get the user's profile information
+#         profile_response = requests.get(f'https://graph.facebook.com/v8.0/me?access_token={access_token}&fields=id,name,email')
+#         # Extract the user's profile information
+#         profile = profile_response.json()
+#         # Store the user's profile information in the session
+#         request.session['user_profile'] = profile
+#         # Redirect the user to the home page
+#         return redirect('account:dashboard')
 
+
+
+#         # Define the API endpoint
+#         url = "https://graph.facebook.com/v9.0/me?fields=id,name,email&access_token=" + access_token
+
+#         # Make the API request
+#         response = requests.get(url)
+
+#         # Check if the request was successful
+#         if response.status_code == 200:
+#             # Load the JSON data from the response
+#             data = json.loads(response.text)
+#             print("User ID:", data["id"])
+#             print("Name:", data["name"])
+#             print("Email:", data["email"])
+#         else:
+#             print("Failed to retrieve user data from Facebook API")
+
+            

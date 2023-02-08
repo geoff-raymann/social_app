@@ -10,3 +10,22 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'Profile for user {self.user.username}'
+
+# from django.contrib.auth.models import User
+
+# def store_facebook_access_token(user, access_token):
+#     user.facebook_access_token = access_token
+#     user.save()
+
+# def get_facebook_access_token(user):
+#     return user.facebook_access_token
+
+# class FacebookProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     facebook_access_token = models.TextField(blank=True, null=True)
+
+# def get_or_create_facebook_profile(user):
+#     try:
+#         return FacebookProfile.objects.get(user=user)
+#     except FacebookProfile.DoesNotExist:
+#         return FacebookProfile.objects.create(user=user)
