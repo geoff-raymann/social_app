@@ -9,4 +9,5 @@
         {% csrf_token %}
         <p><input type="submit" value="Create my account"></p>
     </form>
+    <p>Have an Account Already? <a href="{% url 'account:login' %}">Sign In.</a></p>
 {% endblock %}

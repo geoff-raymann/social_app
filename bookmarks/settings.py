@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Our apps
     'account.apps.AccountConfig',
     'social_django',
+    'images.apps.ImagesConfig',
 
     # Default applications
     'django.contrib.admin',
@@ -48,13 +49,16 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    # 'images.middleware.content_security_policy',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'
