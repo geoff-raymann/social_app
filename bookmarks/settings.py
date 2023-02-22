@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-i_9z49!+yub+^d2i=zweyph7^6f(^9#%ptd7uz70+k+y)7l*3r
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+THUMBNAIL_DEBUG = True
 
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'social_django',
     'images.apps.ImagesConfig',
+    'sslserver',
+    'easy_thumbnails',
 
     # Default applications
     'django.contrib.admin',
@@ -154,11 +157,13 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIAL_AUTH_FACEBOOK_KEY = '3434741986771292'
-SOCIAL_AUTH_FACEBOOK_SECRET = '9b93253f9de28e74001ef64c31ebfe3c'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c78e90e87c48a1a5d2b3c5732cb3e461'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
 SOCIAL_AUTH_TWITTER_KEY = '4rch6uT5fZZKsiDEEZiOkTPSr' # Twitter API Key
 SOCIAL_AUTH_TWITTER_SECRET = '1Dm6IU1HT2D0hK8J69fAdZ5seEelvT2SzODFVPAHf9fuB9sdwa' # Twitter API Secret
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '213828836736-dv8dgat0n8p0s6r1k88vfoa2qt11nm7v.apps.googleusercontent.com' # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Consumer Secret
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '312211936043-onvm9ter9arv1sb9h58hpna9ngmo6mm9.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Google Consumer Secret
+
+SECURE_SSL_REDIRECT = True
