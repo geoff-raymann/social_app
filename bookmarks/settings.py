@@ -57,11 +57,11 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    # 'images.middleware.content_security_policy',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    # 'django.bookmarks.common.middleware.AjaxMiddleware',
+
 ]
 
 ROOT_URLCONF = 'bookmarks.urls'

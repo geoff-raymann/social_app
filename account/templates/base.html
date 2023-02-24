@@ -48,7 +48,7 @@
         {% endblock %}
     </div>
 
-
+    {% block domready %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/
 js.cookie.min.js"></script>
@@ -66,10 +66,10 @@ js.cookie.min.js"></script>
             }
         }
        });
-    //    $(document).ready(function(){
-    //     {% block domready %}
-    //     {% endblock %}
-    //    })
+       $(document).ready(function(){
+            domready
+       })
     </script>
+    {% endblock %}
 </body>
 </html>
